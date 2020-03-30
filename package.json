@@ -1,0 +1,44 @@
+{
+  "name": "reveal.js-webpack-starter",
+  "version": "1.0.0",
+  "repository": "https://github.com/tinesoft/revealjs-webpack-demo.git",
+  "description": "Sample revealjs demo using webpack",
+  "main": "src/index.js",
+  "author": "Tine Kondo",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^3.1.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "extract-css-chunks-webpack-plugin": "^4.7.4",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^4.0.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "path": "^0.12.7",
+    "sass-loader": "^8.0.2",
+    "url-loader": "^4.0.0",
+    "webpack": "^4.42.1",
+    "webpack-bundle-analyzer": "^3.6.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "highlight.js": "^9.18.1",
+    "reveal.js": "^3.9.2",
+    "sfeir-school-theme": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=5.0"
+  },
+  "scripts": {
+    "stats": "webpack --profile --json > stats.json",
+    "serve": "webpack-dev-server --hot",
+    "build": "webpack --mode=production --display-modules --progress --colors"
+  }
+}
