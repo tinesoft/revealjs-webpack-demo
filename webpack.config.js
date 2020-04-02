@@ -49,7 +49,7 @@ module.exports  = (_, argv) => {
           ],
         },
         {
-          test: /\.(svg|gif|png|jpe?g|eot|woff|woff|ttf)$/i,
+          test: /\.(svg|gif|png|jpe?g)$/i,
           use: [
             {
               loader: 'url-loader',
@@ -57,16 +57,21 @@ module.exports  = (_, argv) => {
                   limit: 8192, // in bytes
                   esModule: false,
                   name: devMode ? '[name].[ext]' : '[name].[hash].[ext]',
-                  outputPath: (url, resourcePath, context) => {
-                    const filename = path.basename(resourcePath)
-                    if(/\.(eot|woff|woff|ttf)$/i.test(filename)) {
-                      return `fonts/${filename}`;
-                    }
-                    else if(/\.(svg|gif|png|jpe?g)$/i.test(filename)) {
-                      return `images/${filename}`;
-                    }
-                    return  `misc/${filename}`; 
-                  }
+                  outputPath: 'images'
+              },
+            },
+          ],
+        },
+        {
+          test: /\.(eot|woff|woff|ttf)$/i,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                  limit: 8192, // in bytes
+                  esModule: false,
+                  name: devMode ? '[name].[ext]' : '[name].[hash].[ext]',
+                  outputPath: 'fonts'
               },
             },
           ],
@@ -84,7 +89,6 @@ module.exports  = (_, argv) => {
       new CopyWebpackPlugin([
         {
           from: 'assets/**/**',
-          context: 'assets',
           to: path.resolve(__dirname, 'dist')
         },
         {
