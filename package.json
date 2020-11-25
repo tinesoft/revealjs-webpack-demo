@@ -29,7 +29,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "highlight.js": "^9.18.1",
+    "highlight.js": "^10.1.2",
     "reveal.js": "^3.9.2",
     "sfeir-school-theme": "^1.0.0"
   },
