@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "highlight.js": "^9.18.1",
-    "reveal.js": "^3.9.2",
+    "reveal.js": "^4.3.0",
     "sfeir-school-theme": "^1.0.0"
   },
   "engines": {
